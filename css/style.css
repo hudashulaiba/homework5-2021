@@ -218,7 +218,7 @@ header{
 
   /* centered horizontally and vertically 
   TO CHECK */
-  margin: auto;
+  align-self:center;
 
 }
 
@@ -227,7 +227,7 @@ header{
     padding: 30px 0;
 
     /* nav is aligned to the other side of the window */
-    text-align: end;
+    text-align: right;
   }
 
   .container{
