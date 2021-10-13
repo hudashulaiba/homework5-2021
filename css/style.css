@@ -1,0 +1,305 @@
+/***** STARTER CODE - DO NOT CHANGE *****/
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+  background-color: #737373;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  font-size: 50px;
+  line-height: 1;
+  padding: 50px 0;
+  text-align: center;
+}
+
+h2{
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+nav ul{
+  list-style-type: none;
+}
+
+nav li{
+  display: inline;
+  padding-right: 20px;
+}
+
+nav{
+  background-color: #ddd;
+  padding: 25px 0;    
+  text-align: left;   
+}
+
+header p{
+  color: white;
+  font-size: 24px;
+  padding: 0 100px;
+  text-align: center;
+}
+
+footer{
+  background-color: black;
+  color: white;
+  padding-top: 30px;
+  text-align: center;
+}
+
+
+
+
+/*****  End Starter Code ****/
+
+nav a{
+  color: black;
+  font-weight: bold;
+  /* Requirement 1 code here: Remove the underline from all links in the navigation*/
+  text-decoration: none;
+}
+
+/* Requirement 2: when the mouse hovers over any link in the navigation add an underline under the link */
+nav a:hover{
+  text-decoration: underline;
+}
+
+
+
+.skip a{
+  background: white;
+  left: 0;
+  padding: 6px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+
+  /* Requirement 3a code here: on all screen sizes
+  link positioned 40px above the top of its parent element 
+  (it is hidden by default) */
+  position: absolute;
+  top: -40px;
+  
+}
+
+/* Requirement 3b code here: on all screen sizes
+when link is in focus its evenly positioned w top of parent 
+(so it is visible only when in focus.) */
+.skip a:focus{
+  position: absolute;
+  top: 0px;
+}
+
+
+/* Requirement 4 code here: any element in focus should have a 2px solid border on all sides */
+*:focus{
+  border: 2px solid;
+}
+
+
+
+.container{
+  /* Requirement 5: mobile view. uses grid. three columns: 1fr 5fr 1fr. five rows: all auto. 
+  gap 15px between rows (use grid-row-gap) 
+  TO CHECK */
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: repeat(5, auto);
+  row-gap: 15px;
+}
+
+/* Remainder of requirements here: */
+
+header{
+  background-attachment: fixed; /* Parallax effect */
+  background-position: center; /* Parallax effect */
+  background-size: cover; /* Parallax effect */
+  color: white;
+  height: 400px; /* Parallax effect */
+
+  /* header spans all columns. begins on 1st row and spans 1 row
+  uses header.jpg as non-repeating bg image w parallax effect 
+  TO CHECK*/
+  grid-column: 1/-1;
+  grid-row: 1/ span 1;
+
+  background-image: url('../images/header.jpg');
+  background-repeat: no-repeat;
+}
+
+.about-image{
+  /* span all of the columns. have max height of 700px. 
+  hide any content that goes outside grid cell. 
+  begin on the 2nd row. span one row.
+  TO CHECK */
+  grid-column: 1/-1;
+  max-height: 700px;
+  
+  grid-row: 2 / span 1;
+  overflow: hidden; 
+}
+
+.about{
+  /* begin in 2nd column, span one column
+  begin on the 2nd row. span one row 
+  TO CHECK */
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.method-image{
+  /* span all of the columns. have max height of 700px. 
+  hide any content that goes outside grid cell. 
+  begin on the 3rd row. span one row.
+  TO CHECK */
+  grid-column: 1/-1;
+  max-height: 700px;
+  overflow: hidden;
+  grid-row: 3 / span 1;  
+}
+
+.method{
+  /* begin in 2nd column, span one column
+  begin on the 3rd row. span one row 
+  TO CHECK */
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1; 
+}
+
+/* You need to write some of your own selectors here */
+
+.clients-image{
+  /* span all of the columns. have max height of 700px. 
+  hide any content that goes outside grid cell. 
+  begin on the 4th row. span one row.
+  TO CHECK */
+  grid-column: 1/-1;
+  max-height: 700px;
+  overflow: hidden;
+  grid-row: 4 / span 1; 
+}
+
+.clients{
+  /* begin in 2nd column, span one column
+  begin on the 4th row. span one row 
+  TO CHECK */
+  grid-column: 2 / span 1;
+  grid-row: 4 / span 1;
+}
+
+.contact-image{
+  /* span all of the columns. have max height of 700px. 
+  hide any content that goes outside grid cell. 
+  begin on the 5th row. span one row.
+  TO CHECK */
+  grid-column: 1/-1;
+  max-height: 700px;
+  overflow: hidden;
+  grid-row: 5 / span 1; 
+}
+
+.contact{
+  /* begin in 2nd column, span one column
+  begin on the 5th row. span one row 
+  TO CHECK */
+  grid-column: 2 / span 1;
+  grid-row: 5 / span 1;
+}
+
+
+.text-block{
+  background-color: rgba(255, 255, 255, .8);
+  border: 10px solid black;
+  padding: 30px;
+
+  /* centered horizontally and vertically 
+  TO CHECK */
+  margin: auto;
+
+}
+
+@media screen and (min-width: 800px){
+  nav{
+    padding: 30px 0;
+
+    /* nav is aligned to the other side of the window */
+    text-align: end;
+  }
+
+  .container{
+    /* uses grid. five columns: 50px, auto, 500px, auto, 50px. five rows: 400px, 400px, 400px, 400px, and 400px
+    TO CHECK */
+    display: grid;
+    grid-template-columns: 50px auto 500px auto 50px;
+    grid-template-rows: repeat(5, 400px);
+  }
+
+
+  .about-image{
+    /*Begin in the second column and span two columns.*/
+    grid-column: 2 / span 2;
+  }
+
+  .about{
+    /*Begin in the third column and span two columns*/
+    grid-column: 3 / span 2;
+  }
+
+  .method-image{
+    /*Begin in the third column and span two columns*/
+    grid-column: 3 / span 2;
+  }
+
+  .method{
+    /*Begin in the second column and span two columns.*/
+    grid-column: 2 / span 2;
+  }
+
+  .clients-image{
+    /*Begin in the second column and span two columns.*/
+    grid-column: 2 / span 2; 
+  }
+
+  .clients{
+    /*Begin in the third column and span two columns*/
+    grid-column: 3 / span 2;
+  }
+
+  .contact-image{
+    /*Begin in the third column and span two columns*/
+    grid-column: 3 / span 2;
+  }
+
+  .contact{
+    /*Begin in the second column and span two columns.*/
+    grid-column: 2 / span 2;
+  }
+
+}
+
+
+/** Code for prefers reduced motion **/
+/* Make no changes below this line.
+   *************************************** 
+   */
+@media screen and (prefers-reduced-motion: reduce){
+  /*Turn off scroll*/
+  html{
+      scroll-behavior: auto; /* Removes scroll animation */
+  }
+
+  /*Turn off transition*/
+  .skip a{
+    -webkit-transition: initial; /* sets to default setting */
+    transition: initial; /* sets to default setting */
+  }
+
+  /*Turn off parallax*/
+  header{
+    background-attachment: initial;
+  }
+}
